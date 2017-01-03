@@ -80,11 +80,11 @@ WSGI_APPLICATION = 'trackpoker.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.environ['GAMBLR_DATABASE_NAME'],
-        'USER': os.environ['GAMBLR_DATABASE_USER'],
-        'PASSWORD': os.environ['GAMBLR_DATABASE_PASSWORD'],
-        'HOST': os.environ['GAMBLR_DATABASE_HOST'],
-        'PORT': os.environ['GAMBLR_DATABASE_PORT'],
+        'NAME': os.environ['TRACK_DATABASE_NAME'],
+        'USER': os.environ['TRACK_DATABASE_USER'],
+        'PASSWORD': os.environ['TRACK_DATABASE_PASSWORD'],
+        'HOST': os.environ['TRACK_DATABASE_HOST'],
+        'PORT': os.environ['TRACK_DATABASE_PORT'],
     }
 }
 

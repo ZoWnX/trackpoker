@@ -24,5 +24,6 @@ urlpatterns = [
     url(r'^pokersessions/', include('pokersessions.urls', namespace='pokersessions')),
     url(r'^api/', include('api.urls', namespace='api')),
     url(r'^locations/', include('locations.urls', namespace='locations')),
+    url(r'^games/', include('games.urls', namespace='games')),
     url(r'^$', views.index, name='index'),
 ]

@@ -1,7 +1,6 @@
 from django.db import models
 
 from accounts.models import User
-from locations.models import Location
 
 # Create your models here.
 
@@ -11,7 +10,7 @@ class Currency(models.Model):
     code = models.CharField(max_length=3)
 
     def __str__(self):
-        return 'Currency: {0} - {1} - {2}'.format(self.name, self.code, self.symbol)
+        return '{0} - {1} - {2}'.format(self.name, self.code, self.symbol)
 
     def short_str(self):
         return '{0} ({1})'.format(self.name, self.symbol)
@@ -32,6 +31,7 @@ class Game(models.Model):
         'Currency',
         default=1
     )
+    deleted = models.BooleanField(default=False)
 
     def short_str(self):
         return '{1} ({0})'.format(self.title, self.currency.symbol)

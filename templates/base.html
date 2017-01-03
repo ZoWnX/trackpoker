@@ -46,6 +46,14 @@
             <a class="dropdown-item" href="{% url 'pokersessions:view' user.id %}">Public View</a>
           </div>
         </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="configuration"
+          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Configuration</a>
+          <div class="dropdown-menu" aria-labelledby="configurationDropdown">
+            <a class="dropdown-item" href="{% url 'locations:list' %}">Locations</a>
+            <a class="dropdown-item" href="{% url 'games:list' %}">Games</a>
+          </div>
+        </li>
         <li class="nav-item">
           <a class="nav-link" href="{% url 'accounts:logout' %}">Logout</a>
         </li>

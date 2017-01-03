@@ -2,44 +2,47 @@
 
 {% block title %}pokersessions/detail{% endblock %}
 {% block head %}
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment-with-locales.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+
 {% endblock %}
 {% block content %}
 {% load tz %}
-    <h2>Locations</h2>
+    <h2>Games</h2>
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <button class='btn' type="submit">Add Location</button>
+        <button class='btn' type="submit">Add Game</button>
      </form>
       <table class="table">
         <thead>
           <tr>
-            <th>Name</th>
-            <th>Timezone</th>
-            <th>Games</th>
+            <th>Title</th>
+            <th>Min Buy-in</th>
+            <th>Max Buy-in</th>
             <th>Public</th>
+            <th>Currency</th>
             <th>Delete</th>
           </tr>
         </thead>
         <tbody>
-          {% for location in locations %}
+          {% for game in games %}
           <tr>
             <td>
-							{{ location.name }}
+							{{ game.title }}
             </td>
             <td>
-              {{ location.timezone }}
+              {{ game.min_buy_in }}
             </td>
             <td>
-            	Games
+            	{{ game.max_buy_in }}
             </td>
             <td>
-              {{ location.public }}
+              {{ game.public }}
             </td>
             <td>
-              <form action="{% url 'locations:delete' location.id %}" method="get">
+              {{ game.currency.short_str }}
+            </td>
+            <td>
+              <form action="{% url 'games:delete' game.id %}" method="get">
               <button class='del'>Delete</button>
               <button class='delyes'>Yes</button>
               <button class='delno'>No</button>

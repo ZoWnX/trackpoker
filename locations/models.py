@@ -5,6 +5,7 @@ import pytz
 from django.db import models
 
 from accounts.models import User
+from games.models import Game
 
 # Create your models here.
 class Location(models.Model):
@@ -13,6 +14,7 @@ class Location(models.Model):
     user = models.ForeignKey(User)
     public = models.BooleanField(default=False)
     #games = models.ManyToManyField(Game)
+    deleted = models.BooleanField(default=False)
 
     TIMEZONE_CHOICES = [(x, x) for x in pytz.common_timezones]
     TIMEZONE_DEFAULT = ("UTC","UTC")
