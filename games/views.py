@@ -38,7 +38,6 @@ def list_view(request):
 
 @login_required
 def delete(request, pk):
-   print("in delete()")
    user = request.user
 
    game = Game.objects.get(pk=pk)
