@@ -76,15 +76,15 @@ var config = {
 	data: {
 		datasets: [{
   		label: "Chip-Stacks",
-			backgroundColor: color(window.chartColors.green).alpha(0.5).rgbString(),
+			backgroundColor: color(window.chartColors.blue).alpha(0.5).rgbString(),
 			borderColor: window.chartColors.green,
 			fill: false,
 			data: {{ view.ChipStackUpdatesChartJson|safe }},
 			lineTension: 0,
 		}, {
 			label: "Buy-in",
-			backgroundColor: color(window.chartColors.blue).alpha(0.5).rgbString(),
-			borderColor: window.chartColors.blue,
+			backgroundColor: color(window.chartColors.red).alpha(0.5).rgbString(),
+			borderColor: window.chartColors.red,
 			fill: false,
 			data: {{ view.BuyInUpdatesChartJson|safe }},
 			lineTension: 0,

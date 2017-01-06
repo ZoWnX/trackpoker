@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 # Create your views here.
 from django.contrib.auth.forms import PasswordResetForm
@@ -38,8 +38,10 @@ class LoginView(FormView):
         user = authenticate(email=email, password=password)
         if user is not None:
             # A backend authenticated the credentials
-            print("User is authenticated")
+            #print("User is authenticated")
             login(self.request, user)
+            next = self.request.GET.get("next", "/pokersessions/")
+            return redirect(next)
         else:
             # No backend authenticated the credentials
             print("User is not authenticated")
